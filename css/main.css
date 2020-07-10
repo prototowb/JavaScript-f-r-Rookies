@@ -20,7 +20,11 @@ body {
     'nav footer';
 }
 
-
+code {
+  background-color: #ccc;
+  padding: 20px;
+  display: block;
+}
 
 /* ############################################# */
 
@@ -186,7 +190,7 @@ section {
       'nav main'
       'nav footer';
   }
-  #navbar {padding-top: 15px;}
+  #navbar {padding-top: 15px; width: 240px;}
   #navbar header {
     margin: 0px;
     }
