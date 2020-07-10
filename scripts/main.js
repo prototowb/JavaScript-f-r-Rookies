@@ -17,6 +17,24 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
+/* hamburger toggle */
+
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav__link');
+
+//awaits click on hamburger menu toggle
+navToggle.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+});
+
+//remove 'nav-open' class from element
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    document.body.classList.remove('nav-open');
+   })
+ })
+
+
 /* BACK TO TOP */ 
 // Get the button
 var mybutton = document.getElementById("toTop");

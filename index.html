@@ -24,33 +24,42 @@ DETAILS:
     <!--  body  -->
     <body>
      <div class="layout">
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
       <!-- NAV-BAR -->
-      <nav id="navbar">
+      <nav id="navbar" class="nav">
         <header>
           JavaScript für Rookies
         </header>
-        <li><a href="#Vorwort" class="nav-link">Vorwort</a></li>
-        <li><a href="#JavaScript_und_Java" class="nav-link">"JavaScript and Java"</a></li>
-        <li class="dropdown-btn"><div>Einführung in JavaScript<i class="fa fa-caret-down"></i></div></li>
-        <div class="dropdown-container">
-          <li><a href="#Werte_und_Variabeln" class="nav-link">Werte und Variabeln</a></li>
-          <li><a href="#Datentypen_und_deren_Handhabung" class="nav-link">Datentypen und deren Handhabung</a></li>
-          <li><a href="#Programm_Logik_und_Fluss" class="nav-link">Programm Logik und Fluss</a></li>
-          <li><a href="#Datensammlung_mit_Arrays" class="nav-link">Datensammlung mit Arrays</a></li>
-        </div>
-          <li><a href="#JavaScript_and_Java" class="nav-link">Modularer Code & Funktionen</a></li>
-          <li><a href="#Einführung_in_JavaScript" class="nav-link">Fortgeschrittene Funktionen</a></li>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#Vorwort" class="nav-link">Vorwort</a></li>
+            <li class="nav__item"><a href="#JavaScript_und_Java" class="nav-link">"JavaScript and Java"</a></li>
+            <li class="dropdown-btn nav__item"><div>Einführung in JavaScript<i class="fa fa-caret-down"></i></div></li>
+          <div class="dropdown-container">
+            <li class="nav__item"><a href="#Werte_und_Variabeln" class="nav-link">Werte und Variabeln</a></li>
+            <li class="nav__item"><a href="#Datentypen_und_deren_Handhabung" class="nav-link">Datentypen und deren Handhabung</a></li>
+            <li class="nav__item"><a href="#Programm_Logik_und_Fluss" class="nav-link">Programm Logik und Fluss</a></li>
+            <li class="nav__item"><a href="#Datensammlung_mit_Arrays" class="nav-link">Datensammlung mit Arrays</a></li>
+          </div>
+            <li class="nav__item"><a href="#JavaScript_and_Java" class="nav-link">Modularer Code & Funktionen</a></li>
+            <li class="nav__item"><a href="#Einführung_in_JavaScript" class="nav-link">Fortgeschrittene Funktionen</a></li>
         <!-- SOCIAL-BAR --> 
-        <li><div id="social">
-          <a href="https://github.com/prototowb" class="social-link"><i class="fab fa-github fa-2x"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-codepen fa-2x"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-discord fa-2x"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-twitter fa-2x"></i></a>
-        </div></li>
+          <li class="nav__item">
+            <div id="social">
+              <a href="https://github.com/prototowb" class="social-link"><i class="fab fa-github fa-2x"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-codepen fa-2x"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-discord fa-2x"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+          </li>
         <!-- BELOW-MENU --> 
-        <div id="site-menu">
-          <li><a href="#Einführung_in_JavaScript" class="nav-link">JS-Rookie Lounge</a>
-        </div></li>
+          <li class="nav__item">
+            <div id="site-menu">
+              <a href="#" class="nav-link">JS-Rookie Lounge</a>
+            </div>
+          </li>
+        </ul>
       </nav>
       <!-- MAIN VIEW CONTAINER -->                  
       <main id="main-doc"> 
