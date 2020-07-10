@@ -6,51 +6,53 @@ DETAILS:
   - ...
   - ..!
     -------------->
-
 <!DOCTYPE html>
+<html lang="en">
   <html>
     <head>
-    	<link rel="stylesheet" href="css/normalize.css" type="text/css">
-    	<link rel="stylesheet" href="css/main.css" type="text/css">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--  Meta  -->
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tobias Rauer - Portfolio</title>
+      <!--  Styles  -->
+      <link rel="stylesheet" href="css/normalize.css" type="text/css">
+      <link rel="stylesheet" href="css/main.css" type="text/css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--  Scripts  -->
       <script src="https://kit.fontawesome.com/7555f54dd7.js" crossorigin="anonymous"></script>
     </head>
-    
+    <!--  body  -->
     <body>
-      
      <div class="layout">
- 
-<!-- NAVBAR -->
+      <!-- NAV-BAR -->
       <nav id="navbar">
         <header>
           JavaScript für Rookies
         </header>
-          <a href="#Vorwort" class="nav-link">Vorwort</a>
-          <a href="#JavaScript_und_Java" class="nav-link">"JavaScript and Java"</a>
-        <button class="dropdown-btn">Einführung in JavaScript<i class="fa fa-caret-down"></i></button>
+        <li><a href="#Vorwort" class="nav-link">Vorwort</a></li>
+        <li><a href="#JavaScript_und_Java" class="nav-link">"JavaScript and Java"</a></li>
+        <li class="dropdown-btn"><div>Einführung in JavaScript<i class="fa fa-caret-down"></i></div></li>
         <div class="dropdown-container">
-          <a href="#Werte_und_Variabeln" class="nav-link">Werte und Variabeln</a>
-          <a href="#Datentypen_und_deren_Handhabung" class="nav-link">Datentypen und deren Handhabung</a>
-          <a href="#Programm_Logik_und_Fluss" class="nav-link">Programm Logik und Fluss</a>
-          <a href="#Datensammlung_mit_Arrays" class="nav-link">Datensammlung mit Arrays</a>
+          <li><a href="#Werte_und_Variabeln" class="nav-link">Werte und Variabeln</a></li>
+          <li><a href="#Datentypen_und_deren_Handhabung" class="nav-link">Datentypen und deren Handhabung</a></li>
+          <li><a href="#Programm_Logik_und_Fluss" class="nav-link">Programm Logik und Fluss</a></li>
+          <li><a href="#Datensammlung_mit_Arrays" class="nav-link">Datensammlung mit Arrays</a></li>
         </div>
-          <a href="#JavaScript_and_Java" class="nav-link">Modularer Code & Funktionen</a>
-          <a href="#Einführung_in_JavaScript" class="nav-link">Fortgeschrittene Funktionen</a>
-
-        <div id="social">
+          <li><a href="#JavaScript_and_Java" class="nav-link">Modularer Code & Funktionen</a></li>
+          <li><a href="#Einführung_in_JavaScript" class="nav-link">Fortgeschrittene Funktionen</a></li>
+        <!-- SOCIAL-BAR --> 
+        <li><div id="social">
           <a href="https://github.com/prototowb" class="social-link"><i class="fab fa-github fa-2x"></i></a>
           <a href="#" class="social-link"><i class="fab fa-codepen fa-2x"></i></a>
           <a href="#" class="social-link"><i class="fab fa-discord fa-2x"></i></a>
           <a href="#" class="social-link"><i class="fab fa-twitter fa-2x"></i></a>
-        </div>
-
+        </div></li>
+        <!-- BELOW-MENU --> 
         <div id="site-menu">
-          <a href="#Einführung_in_JavaScript" class="nav-link">JS-Rookie Lounge</a>
-        </div>
+          <li><a href="#Einführung_in_JavaScript" class="nav-link">JS-Rookie Lounge</a>
+        </div></li>
       </nav>
-<!-- NAVBAR-END -->        
-                
+      <!-- MAIN VIEW CONTAINER -->                  
       <main id="main-doc"> 
         <section id="Vorwort" class="main-section">
           <header>Vorwort<hr></header>
@@ -128,7 +130,7 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
         </section>
         
       </main>
-                
+      <!-- MAIN VIEW CONTAINER END -->           
      </div>
      <button onclick="topFunction()" id="toTop" title="Go to top"><i class="far fa-caret-square-up fa-2x"></i></button>
         <script type="text/javascript" src="scripts/main.js"></script>

@@ -12,8 +12,8 @@ body {
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 6fr 2fr;
-  grid-template-rows:  minmax(30px, 30px) 6fr 1fr;
+  grid-template-columns: 300px 6fr 2fr;
+  grid-template-rows:  minmax(30px, 30px) 3fr 1fr;
   grid-template-areas:
     'nav header'
     'nav main'
@@ -22,18 +22,21 @@ body {
 
 
 
-
 /* ############################################# */
 
 /* SIDE-NAV & DROPDOWN */
 
-#navbar {  grid-area: nav; }
-#navbar {
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
+#navbar { 
+  grid-area: nav; 
+  position: fixed;
 }
 
+#navbar { 
+  background-color: #111111;
+  padding-top: 20px;
+  width: 300px;
+  height: 100%;
+}
 
 #navbar header {
   margin-bottom: 30px;
@@ -43,26 +46,34 @@ body {
   font-size: 42px;
   padding: 45px 20px;
 }
-.nav-link {
-  
-}
-
 
 
 /* Style of sidenav links and dropdown button */
+#navbar li {
+  list-style: none;
+  border-bottom: solid thin #333;
+}
+
 #navbar a, .dropdown-btn {
-  padding: 16px 18px 14px 16px;
+  padding: 10px 5px;
   text-decoration: none;
   font-size: 18px;
   color: #818181;
   display: block;
-  border: none;
-  background: none;
   text-align: left;
   cursor: pointer;
   outline: none;
-  width: 100%;
-  border-bottom: solid thin #333;
+}
+
+.nav-link {
+
+}
+
+
+/*active class of the dropdown button */
+.active {
+  background-color: yellow;
+  color: black;
 }
 
 /* On mouse-over */
@@ -74,13 +85,8 @@ body {
   font-weight: 400;
 }
 
-/* Add an active class to the active dropdown button */
-.active {
-  background-color: yellow;
-  color: black;
-}
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+/* Dropdown container (hidden by default). */
 .dropdown-container {
   display: none;
   background-color: #262626;
@@ -97,9 +103,9 @@ body {
 #social {
   position: relative;
   display: flex;
+  justify-content: space-around;
   overflow-x: hidden;
   border-top: 0px solid #4b4b4b;
-
 }
 
 .social-link {
@@ -112,18 +118,18 @@ body {
 
 /* Main content */
 
-#main-doc { grid-area: main; }
+#main-doc {
+  grid-area: main;
+}
 
 #main-doc {
   font-size: 20px;
   padding: 0px 10px;
 }
 
-
 section {
   padding: 30px 20px;
 }
-
 
 
 /* BACK TO TOP*/
@@ -156,14 +162,14 @@ section {
 @media screen and (max-width: 1200px) {
   .layout {
     display: grid;
-    grid-template-columns: minmax(240px, 1fr) 6fr;
+    grid-template-columns: 240px auto;
     grid-template-rows:  minmax(30px, 30px) 6fr 1fr;
     grid-template-areas:
       'nav header'
       'nav main'
       'nav footer';
   }
-  #navbar {padding-top: 15px;}
+  #navbar {padding-top: 15px; width: 240px;}
   #navbar header {
     margin: 0px;
     }
@@ -173,7 +179,7 @@ section {
 @media screen and (max-height: 750px) {
   .layout {
     display: grid;
-    grid-template-columns: minmax(240px, 300px) 3fr;
+    grid-template-columns: 240px auto;
     grid-template-rows:  minmax(30px, 30px) 3fr 1fr;
     grid-template-areas:
       'nav header'
@@ -187,25 +193,25 @@ section {
   #navbar a, .dropdown-btn {font-size: 14px;}
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 750px) {
   .layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows:  1fr;
-  grid-template-areas:
-    'header header'
-    'nav main'
-    'footer footer';
-    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "nav" "main";
   }
   #navbar header {
-  margin-bottom: 30px;
-  margin-right: 0px;
+    margin-bottom: 30px;
+    margin-right: 0px;
+    text-align: center;
   }
-   #navbar {
-   grid-area: header;
-   background-color: #1a1a1a;
+  #navbar {
+   grid-area: nav;
+   position: inherit;
    color: white;
+   width: 100%;
+  }
+#navbar a, .dropdown-btn {
    text-align: center;
   }
 .fa-caret-down {
