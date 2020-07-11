@@ -1,7 +1,7 @@
 <!----------
 DETAILS:
   - Author: Prototowb
-  - Version: v0.1
+  - Version: v0.3
   - Created 10th June 2020
   - ...
   - ..!
@@ -16,10 +16,11 @@ DETAILS:
       <title>Tobias Rauer - Portfolio</title>
       <!--  Styles  -->
       <link rel="stylesheet" href="css/normalize.css" type="text/css">
-      <link rel="stylesheet" href="css/main.css" type="text/css">
+      <link rel="stylesheet" href="assets/css/prism.css" data-noprefix />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="assets/css/main.css" type="text/css">
       <!--  Scripts  -->
-      <script src="https://kit.fontawesome.com/7555f54dd7.js" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/7555f54dd7.js"></script>
     </head>
     <!--  body  -->
     <body>
@@ -35,7 +36,7 @@ DETAILS:
           <ul class="nav__list">
             <li class="nav__item"><a href="#Vorwort" class="nav-link">Vorwort</a></li>
             <li class="nav__item"><a href="#JavaScript_und_Java" class="nav-link">"JavaScript and Java"</a></li>
-            <li class="dropdown-btn nav__item"><div>Einführung in JavaScript<i class="fa fa-caret-down"></i></div></li>
+            <li class="dropdown-btn nav__item"><div>Einführung in JavaScript<i id="drop-icon" class="fa fa-caret-left"></i></div></li>
           <div class="dropdown-container">
             <li class="nav__item"><a href="#Werte_und_Variabeln" class="nav-link">Werte und Variabeln</a></li>
             <li class="nav__item"><a href="#Datentypen_und_deren_Handhabung" class="nav-link">Datentypen und deren Handhabung</a></li>
@@ -66,7 +67,27 @@ DETAILS:
         <section id="Vorwort" class="main-section">
           <header>Vorwort<hr></header>
           <p>Die Passage "JavaScript und Java", stammt noch aus dem Projekt von FreeCodeCamp.org, aus dem diese Seite hervorging. Wenn du noch relativ am Anfang deiner Reise durch die dynamische Welt der Webentwicklung stehst, empfehle ich, dort Mal etwas länger Halt zu machen oder zumindest einen der geführten Kurse "durchzuspielen". Wenn du aber nur dein JS Wissen auffrischen willst, lass dich nicht weiter aufhalten. Wie auch immer - Viel Erfolg!😁</p>
-          <code></code>
+          <code class="language-javascript">/* DROPDOWN */
+            // Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
+            const dropdown = document.getElementsByClassName("dropdown-btn");
+            const dropIcon = document.getElementById('drop-icon');
+            let i;
+            
+            //if clicken on any of the "dropdown-btn", the #drop-icon classes are being toggled,
+            //a 'active' class is added to 'dropdown-btn' and 'display: block / none' is being assigned to 'dropdown-container'.
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener('click', function() {
+              dropIcon.classList.toggle('fa-caret-left');
+              dropIcon.classList.toggle('fa-caret-down');
+              this.classList.toggle('active');
+              const dropdownContent = this.nextElementSibling;
+              if (dropdownContent.style.display === 'block') {
+              dropdownContent.style.display = 'none';
+              } else {
+              dropdownContent.style.display = 'block';
+              }
+              });
+            }</code>
           <li></li>
           <p></p>
           
@@ -142,6 +163,7 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
       <!-- MAIN VIEW CONTAINER END -->           
      </div>
      <button onclick="topFunction()" id="toTop" title="Go to top"><i class="far fa-caret-square-up fa-2x"></i></button>
-        <script type="text/javascript" src="scripts/main.js"></script>
+     <script type="text/javascript" src="assets/js/main.js"></script>
+     <script src="assets/js/prism.js"></script>
     </body>
   </html>

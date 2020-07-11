@@ -2,20 +2,26 @@
 
 /* DROPDOWN */
 // Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
+const dropdown = document.getElementsByClassName("dropdown-btn");
+const dropIcon = document.getElementById('drop-icon');
+let i;
 
+//if clicken on any of the "dropdown-btn", the #drop-icon classes are being toggled,
+//a 'active' class is added to 'dropdown-btn' and 'display: block / none' is being assigned to 'dropdown-container'.
 for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
+  dropdown[i].addEventListener('click', function() {
+  dropIcon.classList.toggle('fa-caret-left');
+  dropIcon.classList.toggle('fa-caret-down');
+  this.classList.toggle('active');
+  const dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === 'block') {
+  dropdownContent.style.display = 'none';
   } else {
-  dropdownContent.style.display = "block";
+  dropdownContent.style.display = 'block';
   }
   });
 }
+
 
 /* hamburger toggle */
 

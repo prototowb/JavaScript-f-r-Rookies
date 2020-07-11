@@ -18,8 +18,8 @@
   --fw-reg: 300;
   --fw-bold: 900;
   
-  --clr-light: #f6f6f6;
-  --clr-dark: #242424;
+  --clr-light: #eeeeee;
+  --clr-dark: #212121;
   --clr-accent: yellow;
 
   --clr-ham-toggl: #1e294b;
@@ -49,7 +49,7 @@ html {
 }
 
 body {
-  background: var(--clr-light);
+  background-color: var(--clr-light);
   color: var(--clr-dark);
   margin: 0;
   font-family: var(--ff-primary);
@@ -140,6 +140,7 @@ h3 { font-size: var(--fs-h3); }
 #navbar { 
   grid-area: nav; 
   position: fixed;
+  z-index: 9;
 }
 
 #navbar { 
@@ -161,6 +162,12 @@ h3 { font-size: var(--fs-h3); }
 
 
 /* Style of sidenav links and dropdown button */
+
+#navbar li:first-child {
+  list-style: none;
+  border-top: solid thin #333;
+}
+
 #navbar li {
   list-style: none;
   border-bottom: solid thin #333;
@@ -191,7 +198,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 /* On mouse-over */
-#navbar a:hover, {
+#navbar a:hover {
   color: #f1f1f1;
   background-color: #1c1c1c;
 }
@@ -202,7 +209,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 #navbar .dropdown-container a:hover  {
-  background-color: #0d0d0d;
+  background-color: #0c0c0c;
 }
 
 
@@ -217,10 +224,10 @@ h3 { font-size: var(--fs-h3); }
 }
 
 /* Style of caret down icon */
-.fa-caret-down {
+#drop-icon {
+  padding-top: 5px;
   float: right;
   padding-right: 15px;
-  line-height: 0.3;
 }
 
 
@@ -271,7 +278,7 @@ nav > ul {
 }
 
 .nav-open .hamburger {
-  transform: translateX(24px) rotate(.625turn) ;
+  transform: translateX(18px) rotate(.625turn) ;
 }
 
 .nav-open .hamburger::before {
@@ -399,11 +406,10 @@ nav > ul {
     grid-template-areas: "nav" "main";
   }
   #navbar header {
-    margin-bottom: 30px;
-    margin-right: 0px;
     text-align: center;
   }
   #navbar {
+    padding-top: 12px;
     color: white;
     width: 100%;
     transform: translate(100%);
