@@ -57,9 +57,12 @@ body {
   line-height: 1.6;
 }
 
+pre {
+  overflow: auto;
+}
+
 code {
   background-color: #ccc;
-  padding: 20px;
   display: block;
 }
 
@@ -129,7 +132,7 @@ h3 {
 
 .layout {
   display: grid;
-  grid-template-columns: 300px 6fr 2fr;
+  grid-template-columns: 300px minmax(0, 6fr) 2fr;
   grid-template-rows: minmax(30px, 30px) 3fr 1fr;
   grid-template-areas:
     "nav header"
@@ -395,7 +398,7 @@ nav > ul {
 @media screen and (max-width: 1200px) {
   .layout {
     display: grid;
-    grid-template-columns: 240px 2fr;
+    grid-template-columns: 240px minmax(0, 2fr);
     grid-template-rows: minmax(30px, 30px) 3fr 1fr;
     grid-template-areas:
       "nav header"
@@ -418,7 +421,7 @@ nav > ul {
 @media only screen and (max-width: 750px) {
   .layout {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas: 'nav' 'main';
   }

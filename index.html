@@ -1,7 +1,7 @@
 <!----------
 DETAILS:
   - Author: Prototowb
-  - Version: v0.3
+  - Version: v0.4 (hljs version)
   - Created 10th June 2020
   - ...
   - ..!
@@ -17,18 +17,20 @@ DETAILS:
       <!--  Styles  -->
       <link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
       <!-- <link rel="stylesheet" href="assets/css/prism.css" data-noprefix /> -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/codepen-embed.min.css" type="text/css">
       <link rel="stylesheet" href="assets/css/main.css" type="text/css">
       <!--  Scripts  -->
       <script src="https://kit.fontawesome.com/7555f54dd7.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <!--  body  -->
     <body>
+     <div class="layout">
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
       </button>
-     <div class="layout">
-      
       <!-- NAV-BAR -->
       <nav id="navbar" class="nav">
         <header>
@@ -45,7 +47,7 @@ DETAILS:
             <li class="nav__item"><a href="#Datensammlung_mit_Arrays" class="nav-link">Datensammlung mit Arrays</a></li>
           </div>
             <li class="nav__item"><a href="#JavaScript_and_Java" class="nav-link">Modularer Code & Funktionen</a></li>
-            <li class="nav__item"><a href="#Einführung_in_JavaScript" class="nav-link">Fortgeschrittene Funktionen</a></li>
+            <li class="nav__item"><a href="#Einführung_in_JavaScript" class="nav-link">Erweiterte Funktionen</a></li>
         <!-- SOCIAL-BAR --> 
           <li class="nav__item">
             <div id="social">
@@ -68,27 +70,29 @@ DETAILS:
         <section id="Vorwort" class="main-section">
           <header>Vorwort<hr></header>
           <p>Die Passage "JavaScript und Java", stammt noch aus dem Projekt von FreeCodeCamp.org, aus dem diese Seite hervorging. Wenn du noch relativ am Anfang deiner Reise durch die dynamische Welt der Webentwicklung stehst, empfehle ich, dort Mal etwas länger Halt zu machen oder zumindest einen der geführten Kurse "durchzuspielen". Wenn du aber nur dein JS Wissen auffrischen willst, lass dich nicht weiter aufhalten. Wie auch immer - Viel Erfolg!😁</p>
-          <code class="language-javascript"><!-- /* DROPDOWN */
-            // Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
-            const dropdown = document.getElementsByClassName("dropdown-btn");
-            const dropIcon = document.getElementById('drop-icon');
-            let i;
-            
-            //if clicken on any of the "dropdown-btn", the #drop-icon classes are being toggled,
-            //a 'active' class is added to 'dropdown-btn' and 'display: block / none' is being assigned to 'dropdown-container'.
-            for (i = 0; i < dropdown.length; i++) {
-              dropdown[i].addEventListener('click', function() {
-              dropIcon.classList.toggle('fa-caret-left');
-              dropIcon.classList.toggle('fa-caret-down');
-              this.classList.toggle('active');
-              const dropdownContent = this.nextElementSibling;
-              if (dropdownContent.style.display === 'block') {
-              dropdownContent.style.display = 'none';
-              } else {
-              dropdownContent.style.display = 'block';
-              }
-              });
-            } --></dropdown.length></code>
+          <pre><code class="hljs javascript">
+/* DROPDOWN */
+// Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
+const dropdown = document.getElementsByClassName("dropdown-btn");
+const dropIcon = document.getElementById('drop-icon');
+let i;
+
+//if clicken on any of the "dropdown-btn", the #drop-icon classes are being toggled,
+//a 'active' class is added to 'dropdown-btn' and 'display: block / none' is being assigned to 'dropdown-container'.
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener('click', function() {
+  dropIcon.classList.toggle('fa-caret-left');
+  dropIcon.classList.toggle('fa-caret-down');
+  this.classList.toggle('active');
+  const dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === 'block') {
+  dropdownContent.style.display = 'none';
+  } else {
+  dropdownContent.style.display = 'block';
+  }
+  });
+}
+          </code></pre>
           <li></li>
           <p></p>
           
@@ -159,12 +163,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 
 Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</p>
         </section>
-        
       </main>
-      <!-- MAIN VIEW CONTAINER END -->           
+      <!-- MAIN VIEW CONTAINER END -->
+      <button onclick="topFunction()" id="toTop" title="Go to top"><i class="far fa-caret-square-up fa-2x"></i></button>          
      </div>
-     <button onclick="topFunction()" id="toTop" title="Go to top"><i class="far fa-caret-square-up fa-2x"></i></button>
      <script type="text/javascript" src="assets/js/main.js"></script>
-     <!-- <script src="assets/js/prism.js"></script> -->
     </body>
   </html>
