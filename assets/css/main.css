@@ -64,6 +64,7 @@ pre {
 code {
   background-color: #ccc;
   display: block;
+  padding: 45px !important;
 }
 
 section {
@@ -347,23 +348,34 @@ nav > ul {
 /* BACK TO TOP*/
 
 #toTop {
+  position: relative;
+  margin-right: 0;
   display: none;
-  position: fixed;
-  bottom: 15px;
-  left: 180px;
   z-index: 99;
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: transparent;
-  color: rgb(90, 90, 90);
+  background-color: #111111;
+  color: rgb(138, 138, 138);
   cursor: pointer;
   padding: 6px;
   border-radius: 2px;
+
 }
 
 #toTop:hover {
   color: yellow;
+}
+
+.toTop {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+      margin-right: 12px;
+}
+
+.toc {
+  display: none;
 }
 
 /* ############################################# */
@@ -375,7 +387,7 @@ nav > ul {
 @media screen and (max-height: 750px) {
   .layout {
     display: grid;
-    grid-template-columns: 240px 6fr 2fr;
+    grid-template-columns: 240px minmax(0, 6fr) 2fr;
     grid-template-rows: minmax(30px, 30px) 3fr 1fr;
     grid-template-areas:
       "nav header"
@@ -442,5 +454,53 @@ nav > ul {
   .fa-caret-down {
     position: absolute;
     right: 15px;
+  }
+  .tocToggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    border: 1px solid #ccc;
+    padding: 5px;
+    padding-bottom: 0;
+  }
+
+  #tocContent {
+    display: none;
+    background-color: #e9e9e9;
+    border: solid 1px #ccc;
+    color: var(--clr-dark);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 24px 15px;
+    padding-bottom: 10px;
+    line-height: 2;
+  }
+
+  .modalClose {
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    right: 10px;
+  }
+
+  #tocContent a {
+    color: var(--clr-dark);
+    text-decoration: none;
+  }
+
+  #tocContent a:hover {
+    color: rgb(104, 104, 104);
+    text-decoration: none;
+  }
+
+  #tocContent li {
+    list-style: none;
   }
 }

@@ -6,7 +6,7 @@ const dropdown = document.getElementsByClassName("dropdown-btn");
 const dropIcon = document.getElementById('drop-icon');
 let i;
 
-//if clicken on any of the "dropdown-btn", the #drop-icon classes are being toggled,
+//if clicked on any of the "dropdown-btn", the #drop-icon classes are being toggled,
 //a 'active' class is added to 'dropdown-btn' and 'display: block / none' is being assigned to 'dropdown-container'.
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener('click', function() {
@@ -22,9 +22,70 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
+/* Table of Content */
+//Get the button
+const toc = document.querySelector(".tocToggle");
+
+//When the user scrolls down 450px from the top of the document, show the button
+window.onscroll = function() {mobileToc()};
+
+function mobileToc() {
+
+  if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
+    toc.style.display = "block";
+  } else {
+    toc.style.display = "none";
+  }
+}
+
+/* display ToC Container */
+//Get the button
+const tocToggle = document.getElementsByClassName("tocToggle");
+let tocLi;
+
+for (tocLi = 0; tocLi < tocToggle.length; tocLi++) {
+  tocToggle[tocLi].addEventListener('click', function() {
+  const tocContent = document.getElementById('tocContent');
+  if (tocContent.style.display === 'block') {
+    tocContent.style.display = 'none';
+  } else {
+    tocContent.style.display = 'block';
+  }
+  });
+}
+
+//Get the "close-Button" of ToC Content and hide/show the div on click
+const modalClose = document.getElementsByClassName("modalClose");
+let moC;
+
+for (moC = 0; moC < modalClose.length; moC++) {
+modalClose[moC].addEventListener('click', function() {
+  const tocContent = document.getElementById('tocContent');
+  if (tocContent.style.display === 'block') {
+    tocContent.style.display = 'none';
+  } else {
+    tocContent.style.display = 'block';
+  }
+  });
+}
+
+//Get the list of ToC Content items and hide/show the div on click
+const tocClose = document.getElementsByClassName("toc__item");
+let tocI;
+
+for (tocI = 0; tocI < tocClose.length; tocI++) {
+  tocClose[tocI].addEventListener('click', function() {
+  const tocContent = document.getElementById('tocContent');
+  if (tocContent.style.display === 'block') {
+    tocContent.style.display = 'none';
+  } else {
+    tocContent.style.display = 'block';
+  }
+  });
+}
+
 
 /* hamburger toggle */
-
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelectorAll('.nav__link');
 
@@ -41,18 +102,18 @@ navLinks.forEach(link => {
  })
 
 
-/* BACK TO TOP */ 
-// Get the button
-var mybutton = document.getElementById("toTop");
 
+/* BACK TO TOP */ 
 //When the user scrolls down 450px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+  // Get the button
+  const toTop = document.getElementById("toTop");
   if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
-    mybutton.style.display = "block";
+    toTop.style.display = "block";
   } else {
-    mybutton.style.display = "none";
+    toTop.style.display = "none";
   }
 }
 
@@ -61,6 +122,7 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
 
 
 

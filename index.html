@@ -63,6 +63,9 @@ DETAILS:
               <a href="#" class="nav-link">JS-Rookie Lounge</a>
             </div>
           </li>
+          <div class="nav__item toTop">
+              <button onclick="topFunction()" id="toTop" title="Go to top"><i class="far fa-caret-square-up fa-2x"></i></button>  
+          </div>
         </ul>
       </nav>
       <!-- MAIN VIEW CONTAINER -->                  
@@ -77,7 +80,7 @@ const dropdown = document.getElementsByClassName("dropdown-btn");
 const dropIcon = document.getElementById('drop-icon');
 let i;
 
-//if clicken on any of the "dropdown-btn", the #drop-icon classes are being toggled,
+//if clicked on any of the "dropdown-btn", the #drop-icon classes are being toggled,
 //a 'active' class is added to 'dropdown-btn' and 'display: block / none' is being assigned to 'dropdown-container'.
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener('click', function() {
@@ -163,9 +166,17 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 
 Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</p>
         </section>
+        <div class="tocToggle"><i class="fa fa-list fa-2x"></i></div>
+        <div id="tocContent">
+          <i class="modalClose fa fa-times fa-2x"></i>
+          <li class="toc__item"><i class="fa fa-arrow-circle-up"></i><a href="#" class="toc-link"> Back to top</a></li>
+          <li class="toc__item"><i class="fa fa-exclamation-circle"></i><a href="#Werte_und_Variabeln" class="toc-link"> Werte und Variabeln</a></li>
+          <li class="toc__item"><i class="fa fa-exclamation-circle"></i><a href="#Datentypen_und_deren_Handhabung" class="toc-link"> Datentypen und deren Handhabung</a></li>
+          <li class="toc__item"><i class="fa fa-exclamation-circle"></i><a href="#Programm_Logik_und_Fluss" class="toc-link"> Programm Logik und Fluss</a></li>
+          <li class="toc__item"><i class="fa fa-exclamation-circle"></i><a href="#Datensammlung_mit_Arrays" class="toc-link"> Datensammlung mit Arrays</a></li>
+        </div>
       </main>
-      <!-- MAIN VIEW CONTAINER END -->
-      <button onclick="topFunction()" id="toTop" title="Go to top"><i class="far fa-caret-square-up fa-2x"></i></button>          
+      <!-- MAIN VIEW CONTAINER END -->        
      </div>
      <script type="text/javascript" src="assets/js/main.js"></script>
     </body>
