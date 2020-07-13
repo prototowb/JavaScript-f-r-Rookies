@@ -171,13 +171,13 @@ h3 {
 }
 
 #navbar header {
+  font-size: 2.1em;
   line-height: 1.2;
   margin-bottom: 30px;
-  margin-right: 60px;
+  margin-right: 30px;
   background-color: var(--clr-accent);
   color: black;
-  font-size: 42px;
-  padding: 45px 20px;
+  padding: 45px 30px;
 }
 
 /* Style of sidenav links and dropdown button */
@@ -194,9 +194,7 @@ h3 {
 
 #navbar a,
 .dropdown-btn {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 12px;
+  padding: 10px 12px;
   text-decoration: none;
   font-size: 18px;
   color: #818181;
@@ -231,10 +229,6 @@ h3 {
   background-color: #3f3f3f;
 }
 
-#social > a:hover {
-  background: none;
-}
-
 /* Dropdown container (hidden by default). */
 .dropdown-container {
   display: none;
@@ -248,18 +242,10 @@ h3 {
   padding-right: 15px;
 }
 
-#social {
-  position: relative;
-  margin-left: -12px;
-  display: flex;
-  justify-content: space-evenly;
-  overflow-x: hidden;
-  border-top: 0px solid #4b4b4b;
-}
-
 /* hamburger toggle */
 
 .nav-toggle {
+  display: none;
   padding: 0.5em;
   background: transparent;
   border: 0;
@@ -269,12 +255,6 @@ h3 {
   top: 1.5em;
   z-index: 1000;
   padding: 0.9em 0;
-}
-
-@media only screen and (min-width: 750px) {
-  .nav-toggle {
-    display: none;
-  }
 }
 
 nav > ul {
@@ -330,6 +310,21 @@ nav > ul {
 }
 .hamburger::after {
   bottom: 6px;
+}
+
+#social {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  overflow-x: hidden;
+  border-top: 0px solid #4b4b4b;
+}
+#social i {
+  font-size: 2em;
+}
+
+#social > a:hover {
+  background: none;
 }
 
 /* ############################################# */
@@ -422,6 +417,7 @@ nav > ul {
     width: 240px;
   }
   #navbar header {
+    font-size: 1.8em;
     margin: 0px;
   }
   #navbar a,
@@ -430,13 +426,48 @@ nav > ul {
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media screen and (max-width: 1024px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 2fr);
+    grid-template-rows: minmax(30px, 30px) 3fr 1fr;
+    grid-template-areas:
+      "nav header"
+      "nav main"
+      "nav footer";
+  }
+  #navbar {
+    padding-top: 15px;
+    width: 150px;
+  }
+  #navbar header {
+    padding: 24px 15px;
+    margin: 0px;
+    font-size: 1.2em;
+  }
+  #navbar a,
+  .dropdown-btn {
+    padding: 10px 6px;
+    font-size: 14px;
+  }
+
+  #social i {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas: 'nav' 'main';
   }
+
+  .nav-toggle {
+    display: block;
+  }
+
   #navbar header {
     text-align: center;
   }
@@ -451,6 +482,11 @@ nav > ul {
   .dropdown-btn {
     text-align: center;
   }
+
+  #social {
+    justify-content: center;
+  }
+
   .fa-caret-down {
     position: absolute;
     right: 15px;
