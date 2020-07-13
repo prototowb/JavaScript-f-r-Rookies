@@ -498,20 +498,27 @@ nav > ul {
   .tocToggle {
     border-radius: 50%;
     position: fixed;
-    bottom: 15px;
-    right: 15px;
+    bottom: 24px;
+    right: 24px;
     text-decoration: none;
     font-size: 18px;
     cursor: pointer;
     outline: none;
     background-color: var(--clr-dark);
     color: var(--clr-accent);
-    border: 1px solid rgb(0, 0, 0);
-    padding: 18px;
-    padding-bottom: 13px;
+    border: 1px solid #000;
+    padding: 6px 10px;
+    padding-bottom: 4px;
+    padding-left: 8px;
   }
 
+  .tocToggle {
+    font-size: 1em;
+  }
+
+
   .modalClose {
+    color: var(--clr-light);
     position: absolute;
     cursor: pointer;
     top: 5px;
@@ -521,7 +528,7 @@ nav > ul {
   #tocContent {
     display: none;
     background-color: var(--clr-dark);
-    border: solid 1px #ccc;
+    border: 2px solid #000;
     color: var(--clr-accent);
     position: fixed;
     bottom: 10px;
@@ -532,12 +539,13 @@ nav > ul {
   }
 
   #tocContent a {
-    color: #e9e9e9;
+    padding-left: 3px;
+    color: #818181;
     text-decoration: none;
   }
 
   #tocContent a:hover {
-    color: var(--clr-accent);
+    color: var(--clr-light);
     text-decoration: none;
   }
 
