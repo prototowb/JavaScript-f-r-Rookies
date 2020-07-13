@@ -24,7 +24,7 @@ for (i = 0; i < dropdown.length; i++) {
 
 /* back to top*/
 //When the user scrolls down 450px from the top of the document, call these functions and show the button(s)
-window.onscroll = function() {scrollFunction()}, function() {mobileToc()};
+window.onscroll = function() {scrollFunction(); mobileToc();}
 
 function scrollFunction() {
   // Get the button
