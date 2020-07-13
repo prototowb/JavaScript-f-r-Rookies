@@ -22,15 +22,32 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
+/* back to top*/
+//When the user scrolls down 450px from the top of the document, call these functions and show the button(s)
+window.onscroll = function() {scrollFunction()}, function() {mobileToc()};
+
+function scrollFunction() {
+  // Get the button
+  const toTop = document.getElementById("toTop");
+  if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
+    toTop.style.display = "block";
+  } else {
+    toTop.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
 /* Table of Content */
 //Get the button
 const toc = document.querySelector(".tocToggle");
 
-//When the user scrolls down 450px from the top of the document, show the button
-window.onscroll = function() {mobileToc()};
-
 function mobileToc() {
-
   if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
     toc.style.display = "block";
   } else {
@@ -100,28 +117,6 @@ navLinks.forEach(link => {
     document.body.classList.remove('nav-open');
    })
  })
-
-
-
-/* BACK TO TOP */ 
-//When the user scrolls down 450px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  // Get the button
-  const toTop = document.getElementById("toTop");
-  if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
-    toTop.style.display = "block";
-  } else {
-    toTop.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
 
 
 
