@@ -22,6 +22,19 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
+
+// Get the list of Menu items and hide the Menu on click
+const navItem = document.getElementsByClassName("nav__item");
+const dropdownContent = document.getElementsByClassName("dropdown-container");
+let navI;
+
+for (navI = 0; navI < navItem.length; navI++) {
+  navItem[navI].addEventListener("click", function() {
+  document.body.classList.toggle("nav-open");
+  dropdownContent.style.display = "none";
+  });
+}
+
 /* back to top*/
 //When the user scrolls down 450px from the top of the document, call these functions and show the button(s)
 window.onscroll = function() {scrollFunction(); mobileToc();}
