@@ -29,7 +29,7 @@ window.onscroll = function() {scrollFunction(); mobileToc();}
 function scrollFunction() {
   // Get the button
   const toTop = document.getElementById("toTop");
-  if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
+  if (window.innerWidth < 768 && document.body.scrollTop > 810 || document.documentElement.scrollTop > 810) {
     toTop.style.display = "block";
   } else {
     toTop.style.display = "none";
